@@ -34,12 +34,9 @@ def cart_detail(request):
                             'override': True})
     return render(request, 'cart/detail.html', {'cart': cart})
 
-from .models import Post
 
 
-def home(request):
-    posts = Post.objects.all()
-    return render(request, "blog/home.html", {"posts": posts})
+
 
 
 
