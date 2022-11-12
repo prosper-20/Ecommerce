@@ -30,7 +30,4 @@ if settings.DEBUG:
 
 
 
-from .views import home
-
-path("", home, name="home")
 
