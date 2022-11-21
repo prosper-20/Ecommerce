@@ -21,12 +21,12 @@ def order_create(request):
             # launch asynchronous task
             order_created.delay(order.id)
             return render(request,
-                          'orders/order/created.html',
+                          'orders/created.html',
                           {'order': order})
     else:
         form = OrderCreateForm()
     return render(request,
-                  'orders/order/create.html',
+                  'orders/create.html',
                   {'cart': cart, 'form': form})
 
 
