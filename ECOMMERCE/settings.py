@@ -135,7 +135,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CART_SESSION_ID = 'cart'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'edwardprosper001@gmail.com'
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
 
 
 STRIPE_PUBLISHABLE_KEY = "pk_test_51Jk8lqLhsYBQbrbHw7yfpl7KudTqlMXOwMYVsF8INek5KApfXm72gza3YuCqwwqMuXKYWmDPK9e63h2I0h1Xx5pF00w3H3wCcK"
